@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../utils/Logo";
-import { FiShoppingCart } from "react-icons/fi";
+import { FiMenu, FiShoppingCart } from "react-icons/fi";
 import Button from "../../utils/Button";
 
 // navData
@@ -50,17 +50,19 @@ function NavBar() {
       <div className="flex justify-center items-center gap-5">
         <div className="relative font-bold cursor-pointer">
           <span className="absolute font-bold -top-3.5 left-3 text-violet-600">
-            {" "}
             0
-          </span>{" "}
+          </span>
           <FiShoppingCart className="text-2xl hover:text-violet-600" />
         </div>
         <button className=" font-bold cursor-pointer hover:text-violet-500">
-          {" "}
           Login
         </button>
         <Button text="Get Started" />
       </div>
+      {/* menu humburger icon for mobile view */}
+      <button className="text-2xl cursor-pointer hover:text-violet-600">
+        <FiMenu />
+      </button>
     </div>
   );
 }

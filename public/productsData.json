@@ -110,5 +110,19 @@
             "Responsive templates",
             "SEO optimization"
         ]
+    },
+    {
+        "id": 9,
+        "name": "AI Chat Assistant",
+        "description": "Smart AI assistant to automate conversations and customer support.",
+        "price": 24.99,
+        "period": "monthly",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "24/7 auto replies",
+            "Multi-language support",
+            "Easy integration"
+        ]
     }
 ]

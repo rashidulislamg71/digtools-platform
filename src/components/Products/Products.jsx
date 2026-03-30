@@ -5,7 +5,7 @@ function Products({ promiseProducts }) {
   const productsData = use(promiseProducts);
 
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16 my-15">
       {productsData.length > 0 ? (
         productsData.map((product) => (
           <ProductCart key={product.id} product={product} />

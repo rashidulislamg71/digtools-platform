@@ -1,68 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../utils/Logo";
-import { FiMenu, FiShoppingCart } from "react-icons/fi";
+import { FiMenu, FiShoppingCart, FiX } from "react-icons/fi";
 import Button from "../../utils/Button";
 
-// navData
 const navItems = [
-  {
-    id: 1,
-    title: "Products",
-    path: "/", // optional: you can add an icon component
-  },
-  {
-    id: 2,
-    title: "Features",
-    path: "/features",
-  },
-  {
-    id: 3,
-    title: "Pricing",
-    path: "/pricing",
-  },
-  {
-    id: 4,
-    title: "Testimonials",
-    path: "/testimonials",
-  },
-  {
-    id: 5,
-    title: "FAQ",
-    path: "/faq",
-  },
+  { id: 1, title: "Products", path: "/" },
+  { id: 2, title: "Features", path: "/features" },
+  { id: 3, title: "Pricing", path: "/pricing" },
+  { id: 4, title: "Testimonials", path: "/testimonials" },
+  { id: 5, title: "FAQ", path: "/faq" },
 ];
 
+const navLinks = (
+  <>
+    {navItems.map((item) => (
+      <li key={item.id}>
+        <a className="hover:text-violet-600 font-bold" href={item.path}>
+          {item.title}
+        </a>
+      </li>
+    ))}
+  </>
+);
+
 function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-between bg-gray-50 py-4 px-6">
-      <Logo />
+    <div className="bg-gray-50">
+      <div className="flex items-center justify-between py-4 px-4 md:px-8">
+        <div className="flex items-center gap-1">
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-xl"
+          >
+            {isMenuOpen ? <FiX /> : <FiMenu />}
+          </button>
 
-      <ul className="flex gap-6">
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <a className="hover:text-violet-600 font-bold" href={item.path}>
-              {item.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="flex justify-center items-center gap-5">
-        <div className="relative font-bold cursor-pointer">
-          <span className="absolute font-bold -top-3.5 left-3 text-violet-600">
-            0
-          </span>
-          <FiShoppingCart className="text-2xl hover:text-violet-600" />
+          <Logo />
         </div>
-        <button className=" font-bold cursor-pointer hover:text-violet-500">
-          Login
-        </button>
-        <Button text="Get Started" />
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-6">{navLinks}</ul>
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden absolute top-16  w-full bg-violet-200 p-4 z-0
+  transition-all duration-300 ease-in-out
+  ${isMenuOpen ? "left-0 " : "-left-100 "}
+`}
+        >
+          <ul className="flex flex-col gap-4">{navLinks}</ul>
+        </div>
+
+        {/* Right side */}
+        <div className="flex items-center gap-5">
+          <div className="relative font-bold cursor-pointer">
+            <span className="absolute -top-3.5 left-3 text-violet-600">0</span>
+            <FiShoppingCart className="text-2xl hover:text-violet-600" />
+          </div>
+
+          <button className="hidden md:block font-bold hover:text-violet-500">
+            Login
+          </button>
+
+          <div className="">
+            <Button text="Get Started" />
+          </div>
+        </div>
       </div>
-      {/* menu humburger icon for mobile view */}
-      <button className="text-2xl cursor-pointer hover:text-violet-600">
-        <FiMenu />
-      </button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 
-function ProductCart() {
+function ProductCart({product}) {
+  console.log("ProductCart product:", product);
   return (
     <div>ProductCart</div>
   )

@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "name": "Pro Resume Builder",
+        "description": "Create professional resumes in minutes with AI assistance.",
+        "price": 29.99,
+        "period": "one-time",
+        "tag": "Best Seller",
+        "tagType": "best_seller",
+        "features": [
+            "100+ templates",
+            "ATS optimization",
+            "Export to PDF"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Premium Analytics Suite",
+        "description": "Advanced analytics tools to track and boost your business performance.",
+        "price": 49.99,
+        "period": "monthly",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "Real-time dashboards",
+            "Custom reports",
+            "Team collaboration"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Cloud Storage Pro",
+        "description": "Secure and scalable cloud storage for your personal and business files.",
+        "price": 99.99,
+        "period": "yearly",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "1TB storage",
+            "Automatic backup",
+            "File sharing & permissions"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "AI Design Tool",
+        "description": "Generate stunning graphics and designs effortlessly using AI.",
+        "price": 39.99,
+        "period": "monthly",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "AI-powered templates",
+            "Drag & drop editor",
+            "High-res exports"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Marketing Automation",
+        "description": "Automate your marketing campaigns and grow your audience.",
+        "price": 59.99,
+        "period": "monthly",
+        "tag": "Best Seller",
+        "tagType": "best_seller",
+        "features": [
+            "Email automation",
+            "Lead scoring",
+            "Analytics & insights"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "E-learning Platform",
+        "description": "Create and manage online courses for students worldwide.",
+        "price": 149.99,
+        "period": "yearly",
+        "tag": "New",
+        "tagType": "new",
+        "features": [
+            "Course builder",
+            "Quizzes & assignments",
+            "Student analytics"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Social Media Scheduler",
+        "description": "Plan and schedule posts across multiple social networks effortlessly.",
+        "price": 19.99,
+        "period": "monthly",
+        "tag": "Popular",
+        "tagType": "popular",
+        "features": [
+            "Multi-platform posting",
+            "Content calendar",
+            "Performance tracking"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Website Builder Pro",
+        "description": "Build stunning websites with no coding skills required.",
+        "price": 89.99,
+        "period": "one-time",
+        "tag": "Best Seller",
+        "tagType": "best_seller",
+        "features": [
+            "Drag & drop editor",
+            "Responsive templates",
+            "SEO optimization"
+        ]
+    }
+]

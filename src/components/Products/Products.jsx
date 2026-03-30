@@ -1,10 +1,20 @@
+import { use } from "react";
+import ProductCart from "./ProductCart";
 
-import React from 'react'
+function Products({ promiseProducts }) {
+  const productsData = use(promiseProducts);
 
-function Products() {
   return (
-    <div>Products</div>
-  )
+    <div>
+      {productsData.length > 0 ? (
+        productsData.map((product) => (
+          <ProductCart key={product.id} product={product} />
+        ))
+      ) : (
+        <p>No products available.</p>
+      )}
+    </div>
+  );
 }
 
-export default Products
+export default Products;

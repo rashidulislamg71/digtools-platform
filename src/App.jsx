@@ -5,6 +5,7 @@ import Banner from "./components/HeroBanner/Banner";
 import Stats from "./components/status/Stats";
 import ProductsSectionTitle from "./components/ProductsSectionTitleAndBtn/ProductsSectionTitle";
 import Products from "./components/Products/Products";
+import GetStartSection from "./components/GetStartSection/GetStartSection";
 
 const productsData = async () => {
   try {
@@ -44,6 +45,10 @@ function App() {
           >
             <Products promiseProducts={promiseProducts} />
           </Suspense>
+        </section>
+
+        <section>
+          <GetStartSection />
         </section>
       </main>
     </>

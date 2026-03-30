@@ -7,6 +7,7 @@ import ProductsSectionTitle from "./components/ProductsSectionTitleAndBtn/Produc
 import Products from "./components/Products/Products";
 import GetStartSection from "./components/GetStartSection/GetStartSection";
 import Pricing from "./components/Pricing/Pricing";
+import WorkFlow from "./components/WorkFlowSection/WorkFlow";
 
 const productsData = async () => {
   try {
@@ -73,6 +74,10 @@ function App() {
           >
             <Pricing promisePricing={promisePricing} />
           </Suspense>
+        </section>
+
+        <section>
+          <WorkFlow />
         </section>
       </main>
     </>

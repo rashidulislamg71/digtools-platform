@@ -6,7 +6,7 @@ import banner from "../../assets/banner.png";
 
 function Banner() {
   return (
-    <div className="flex flex-wrap flex-col md:flex-row items-center justify-between gap-10 px-4 md:px-8 lg:px-16 py-12 ">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-10 px-4 md:px-8 lg:px-16 py-12 ">
       {/* banner content left side  */}
       <div className="flex flex-col gap-4 max-w-110">
         <div

@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "name": "Basic Plan",
+        "description": "Perfect for individuals getting started with essential tools.",
+        "price": 9.99,
+        "period": "monthly",
+        "tag": "Starter",
+        "tagType": "new",
+        "features": [
+            "Access to basic features",
+            "Email support",
+            "5 projects limit",
+            "Community access"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Pro Plan",
+        "description": "Best for professionals who need advanced tools and flexibility.",
+        "price": 29.99,
+        "period": "monthly",
+        "tag": "Most Popular",
+        "tagType": "popular",
+        "features": [
+            "All basic features",
+            "Unlimited projects",
+            "Priority support",
+            "Advanced analytics",
+            "Custom integrations"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Enterprise Plan",
+        "description": "Complete solution for teams and businesses with premium needs.",
+        "price": 99.99,
+        "period": "monthly",
+        "tag": "Best Value",
+        "tagType": "best_seller",
+        "features": [
+            "All pro features",
+            "Dedicated account manager",
+            "24/7 premium support",
+            "Team collaboration tools",
+            "Custom solutions & API access"
+        ]
+    }
+]

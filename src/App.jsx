@@ -6,6 +6,7 @@ import Stats from "./components/status/Stats";
 import ProductsSectionTitle from "./components/ProductsSectionTitleAndBtn/ProductsSectionTitle";
 import Products from "./components/Products/Products";
 import GetStartSection from "./components/GetStartSection/GetStartSection";
+import Pricing from "./components/Pricing/Pricing";
 
 const productsData = async () => {
   try {
@@ -21,8 +22,23 @@ const productsData = async () => {
   }
 };
 
+const pricingData = async () => {
+  try {
+    const res = await fetch("/pricingData.json");
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching pricing data:", error);
+    return [];
+  }
+};
+
 function App() {
   const promiseProducts = productsData();
+  const promisePricing = pricingData();
   return (
     <>
       <nav>
@@ -49,6 +65,14 @@ function App() {
 
         <section>
           <GetStartSection />
+        </section>
+
+        <section>
+          <Suspense
+            fallback={<span className="loading loading-ring loading-lg"></span>}
+          >
+            <Pricing promisePricing={promisePricing} />
+          </Suspense>
         </section>
       </main>
     </>

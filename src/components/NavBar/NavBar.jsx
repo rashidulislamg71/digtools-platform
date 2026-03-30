@@ -28,15 +28,15 @@ function NavBar() {
 
   return (
     <div
-      className="bg-gray-50 px-4 md:px-8 lg:px-16 
-      py-4"
+      className="bg-gray-50 "
     >
-      <div className="flex items-center justify-between  relative">
+      <div className="flex items-center justify-between relative px-4 md:px-8 lg:px-16 
+      py-4 z-10">
         <div className="flex items-center gap-1">
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-xl"
+            className="lg:hidden text-xl"
           >
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
@@ -45,12 +45,12 @@ function NavBar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6">{navLinks}</ul>
+        <ul className="hidden lg:flex gap-6">{navLinks}</ul>
         {/* Mobile Menu */}
         <div
-          className={`md:hidden absolute top-16  w-full bg-violet-200 p-4 z-0
+          className={`lg:hidden absolute top-16  w-full bg-violet-200 p-4 z-0
   transition-all duration-300 ease-in-out
-  ${isMenuOpen ? "left-0 " : "-left-100 "}
+  ${isMenuOpen ? "left-0 " : "-left-1000 "}
 `}
         >
           <ul className="flex flex-col gap-4">{navLinks}</ul>

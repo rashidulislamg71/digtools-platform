@@ -8,6 +8,7 @@ import Products from "./components/Products/Products";
 import GetStartSection from "./components/GetStartSection/GetStartSection";
 import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlowSection/WorkFlow";
+import Footer from "./components/Footer/Footer";
 
 const productsData = async () => {
   try {
@@ -80,6 +81,10 @@ function App() {
           <WorkFlow />
         </section>
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

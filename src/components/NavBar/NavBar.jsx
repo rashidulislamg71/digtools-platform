@@ -27,8 +27,11 @@ function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="bg-gray-50">
-      <div className="flex items-center justify-between py-4 px-4 md:px-8">
+    <div
+      className="bg-gray-50 px-4 md:px-8 lg:px-16 
+      py-4"
+    >
+      <div className="flex items-center justify-between  relative">
         <div className="flex items-center gap-1">
           {/* Mobile menu button */}
           <button

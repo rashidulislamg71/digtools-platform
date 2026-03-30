@@ -3,6 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Banner from "./components/HeroBanner/Banner";
 import Stats from "./components/status/Stats";
+import ProductsSectionTitle from "./components/ProductsSectionTitleAndBtn/ProductsSectionTitle";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         </section>
         <section>
           <Stats />
+        </section>
+
+        <section>
+          <ProductsSectionTitle />
         </section>
       </main>
     </>

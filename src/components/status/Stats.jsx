@@ -13,7 +13,7 @@ const SingleStat = ({ number, label }) => {
 
 function Stats() {
   return (
-    <div className="bg-violet-600 p-4 md:py-10 md:px-20">
+    <div className="bg-linear-to-r from-violet-600 to-fuchsia-600 p-4 md:py-10 md:px-20 mb-0 md:mb-20">
       <div className="flex justify-between items-center w-full gap-4">
         {/* First Stat */}
         <SingleStat number="50K+" label="Active Users" />

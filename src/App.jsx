@@ -9,7 +9,7 @@ import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlowSection/WorkFlow";
 import Footer from "./components/Footer/Footer";
 import Banner from "./components/HeroBanner/Banner.jsx";
-import Cart from "./components/Cart/Cart.jsx";
+import Carts from "./components/Carts/Carts.jsx";
 
 const productsData = async () => {
   try {
@@ -40,7 +40,8 @@ const pricingData = async () => {
 };
 
 function App() {
-const [active, setActive] = useState('products');
+  const [active, setActive] = useState('products');
+  const [cartItems, setCartItems] = useState([]);
 
   const promiseProducts = productsData();
   const promisePricing = pricingData();
@@ -58,13 +59,22 @@ const [active, setActive] = useState('products');
         </section>
 
         <section>
-          <ProductsSectionTitle active ={active} setActive ={setActive} />
+          <ProductsSectionTitle active={active} setActive={setActive} />
         </section>
-        <section>
+        <section className="flex justify-center items-center">
           <Suspense
-            fallback={<span className="loading loading-ring loading-lg"></span>}
+            fallback={
+              <div className="py-20">
+                <span className="loading loading-spinner loading-lg"> </span>
+
+              </div>
+            }
           >
-            <Products promiseProducts={promiseProducts} />
+            {active === "products" ? (
+              <Products promiseProducts={promiseProducts} />
+            ) : (
+              <Carts />
+            )}
           </Suspense>
         </section>
 
@@ -74,7 +84,7 @@ const [active, setActive] = useState('products');
 
         <section>
           <Suspense
-            fallback={<span className="loading loading-ring loading-lg"></span>}
+            fallback={<span className="loading loading-spinner loading-lg"></span>}
           >
             <Pricing promisePricing={promisePricing} />
           </Suspense>

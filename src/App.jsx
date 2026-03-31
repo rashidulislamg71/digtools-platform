@@ -43,12 +43,20 @@ function App() {
   const [active, setActive] = useState('products');
   const [cartItems, setCartItems] = useState([]);
 
+  console.log(cartItems)
+
+  const addToCartHandle = (item) => {
+    console.log(item)
+    const data = [...cartItems, item];
+    setCartItems(data);
+  };
+
   const promiseProducts = productsData();
   const promisePricing = pricingData();
   return (
     <>
       <nav>
-        <NavBar />
+        <NavBar cartItems={cartItems} />
       </nav>
       <main>
         <section>
@@ -59,7 +67,7 @@ function App() {
         </section>
 
         <section>
-          <ProductsSectionTitle active={active} setActive={setActive} />
+          <ProductsSectionTitle active={active} setActive={setActive} cartItems={cartItems} />
         </section>
         <section className="flex justify-center items-center">
           <Suspense
@@ -71,7 +79,7 @@ function App() {
             }
           >
             {active === "products" ? (
-              <Products promiseProducts={promiseProducts} />
+              <Products promiseProducts={promiseProducts} addToCartHandle={addToCartHandle} />
             ) : (
               <Carts />
             )}

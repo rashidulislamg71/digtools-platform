@@ -11,6 +11,7 @@ import {
   FaGlobe,
   FaRobot
 } from "react-icons/fa";
+import { IoIosCheckmark } from "react-icons/io";
 
 const productIcons = [
   {
@@ -69,7 +70,7 @@ const productIcons = [
   },
 ];
 
-function ProductCart({ product }) {
+function ProductCart({ product, addToCartHandle }) {
   const { name, description, price, period, tag, tagType, features } = product;
 
   const matchedIcon = productIcons.find((item) => item.name === name);
@@ -83,13 +84,12 @@ function ProductCart({ product }) {
       <div className="flex justify-end">
         <span
           className={`px-3 py-1 text-sm rounded-full mb-3 font-semibold 
-          ${
-            tagType === "popular"
+          ${tagType === "popular"
               ? "bg-blue-100 text-blue-600"
               : tagType === "new"
                 ? "bg-green-100 text-green-600"
                 : "bg-yellow-100 text-yellow-600"
-          }`}
+            }`}
         >
           {tag}
         </span>
@@ -111,11 +111,11 @@ function ProductCart({ product }) {
 
       <ul className="mb-5 space-y-1 text-sm text-gray-700">
         {features.map((feature, index) => (
-          <li key={index}>✔ {feature}</li>
+          <li className="flex items-center gap-1" key={index}><IoIosCheckmark className="text-2xl text-green-500 font-bold" /> {feature}</li>
         ))}
       </ul>
 
-      <button
+      <button onClick={() => addToCartHandle(product)}
         className="mt-auto bg-linear-to-r from-violet-600 to-fuchsia-600 text-white py-2 rounded-lg cursor-pointer hover:to-violet-500
        hover:text-black duration-100 transition"
       >

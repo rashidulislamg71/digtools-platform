@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductsBtn({ active, setActive }) {
+function ProductsBtn({ active, setActive, cartItems }) {
 
   const btnActiveStyles = `bg-linear-to-r from-violet-600 to-fuchsia-400 text-white rounded-full py-1 px-3 `;
   const btnCommonStyles = `text-black cursor-pointer font-semibold transition duration-300 hover:text-violet-500  `
@@ -11,7 +11,7 @@ function ProductsBtn({ active, setActive }) {
         Products
       </button>
       <button onClick={() => setActive("cart")} className={`px-3 ${active === "cart" ? btnActiveStyles : btnCommonStyles}`}>
-        Cart 0
+        Cart {cartItems.length}
       </button>
     </div>
   );

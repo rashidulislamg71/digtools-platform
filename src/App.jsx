@@ -39,6 +39,9 @@ const pricingData = async () => {
   }
 };
 
+const promiseProducts = productsData();
+const promisePricing = pricingData();
+
 function App() {
   const [active, setActive] = useState('products');
   const [cartItems, setCartItems] = useState([]);
@@ -51,8 +54,6 @@ function App() {
     setCartItems(data);
   };
 
-  const promiseProducts = productsData();
-  const promisePricing = pricingData();
   return (
     <>
       <nav>

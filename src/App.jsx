@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Banner from "./components/HeroBanner/Banner";
 import Stats from "./components/status/Stats";
 import ProductsSectionTitle from "./components/ProductsSectionTitleAndBtn/ProductsSectionTitle";
 import Products from "./components/Products/Products";
@@ -9,6 +8,7 @@ import GetStartSection from "./components/GetStartSection/GetStartSection";
 import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlowSection/WorkFlow";
 import Footer from "./components/Footer/Footer";
+import Banner from "./components/HeroBanner/Banner";
 
 const productsData = async () => {
   try {

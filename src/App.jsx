@@ -39,6 +39,75 @@ const pricingData = async () => {
   }
 };
 
+import {
+  FaFileAlt,
+  FaChartLine,
+  FaCloud,
+  FaPaintBrush,
+  FaBullhorn,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaGlobe,
+  FaRobot
+} from "react-icons/fa";
+
+const productIcons = [
+  {
+    id: 1,
+    name: "Pro Resume Builder",
+    icon: FaFileAlt,
+    iconColor: "text-blue-500",
+  },
+  {
+    id: 2,
+    name: "Premium Analytics Suite",
+    icon: FaChartLine,
+    iconColor: "text-green-500",
+  },
+  {
+    id: 3,
+    name: "Cloud Storage Pro",
+    icon: FaCloud,
+    iconColor: "text-sky-500",
+  },
+  {
+    id: 4,
+    name: "AI Design Tool",
+    icon: FaPaintBrush,
+    iconColor: "text-pink-500",
+  },
+  {
+    id: 5,
+    name: "Marketing Automation",
+    icon: FaBullhorn,
+    iconColor: "text-orange-500",
+  },
+  {
+    id: 6,
+    name: "E-learning Platform",
+    icon: FaGraduationCap,
+    iconColor: "text-purple-500",
+  },
+  {
+    id: 7,
+    name: "Social Media Scheduler",
+    icon: FaCalendarAlt,
+    iconColor: "text-indigo-500",
+  },
+  {
+    id: 8,
+    name: "Website Builder Pro",
+    icon: FaGlobe,
+    iconColor: "text-teal-500",
+  },
+  {
+    id: 9,
+    name: "AI Chat Assistant",
+    icon: FaRobot,
+    iconColor: "text-red-500",
+  },
+];
+
 const promiseProducts = productsData();
 const promisePricing = pricingData();
 
@@ -46,13 +115,19 @@ function App() {
   const [active, setActive] = useState('products');
   const [cartItems, setCartItems] = useState([]);
 
-  console.log(cartItems)
-
   const addToCartHandle = (item) => {
-    console.log(item)
     const data = [...cartItems, item];
     setCartItems(data);
   };
+
+  const removeItemFormCart = (item) => {
+    const filterItem = cartItems.filter(cart => cart.id !== item.id);
+    setCartItems(filterItem);
+  }
+
+  const proceedToCheckout = () => {
+    setCartItems([]);
+  }
 
   return (
     <>
@@ -80,9 +155,9 @@ function App() {
             }
           >
             {active === "products" ? (
-              <Products promiseProducts={promiseProducts} addToCartHandle={addToCartHandle} />
+              <Products promiseProducts={promiseProducts} addToCartHandle={addToCartHandle} productIcons={productIcons} />
             ) : (
-              <Carts />
+              <Carts cartItems={cartItems} setCartItems={setCartItems} productIcons={productIcons} removeItemFormCart={removeItemFormCart} proceedToCheckout={proceedToCheckout} />
             )}
           </Suspense>
         </section>

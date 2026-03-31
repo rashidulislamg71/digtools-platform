@@ -1,76 +1,10 @@
 import React from "react";
 
-import {
-  FaFileAlt,
-  FaChartLine,
-  FaCloud,
-  FaPaintBrush,
-  FaBullhorn,
-  FaGraduationCap,
-  FaCalendarAlt,
-  FaGlobe,
-  FaRobot
-} from "react-icons/fa";
 import { IoIosCheckmark } from "react-icons/io";
 
-const productIcons = [
-  {
-    id: 1,
-    name: "Pro Resume Builder",
-    icon: FaFileAlt,
-    iconColor: "text-blue-500",
-  },
-  {
-    id: 2,
-    name: "Premium Analytics Suite",
-    icon: FaChartLine,
-    iconColor: "text-green-500",
-  },
-  {
-    id: 3,
-    name: "Cloud Storage Pro",
-    icon: FaCloud,
-    iconColor: "text-sky-500",
-  },
-  {
-    id: 4,
-    name: "AI Design Tool",
-    icon: FaPaintBrush,
-    iconColor: "text-pink-500",
-  },
-  {
-    id: 5,
-    name: "Marketing Automation",
-    icon: FaBullhorn,
-    iconColor: "text-orange-500",
-  },
-  {
-    id: 6,
-    name: "E-learning Platform",
-    icon: FaGraduationCap,
-    iconColor: "text-purple-500",
-  },
-  {
-    id: 7,
-    name: "Social Media Scheduler",
-    icon: FaCalendarAlt,
-    iconColor: "text-indigo-500",
-  },
-  {
-    id: 8,
-    name: "Website Builder Pro",
-    icon: FaGlobe,
-    iconColor: "text-teal-500",
-  },
-  {
-    id: 9,
-    name: "AI Chat Assistant",
-    icon: FaRobot,
-    iconColor: "text-red-500",
-  },
-];
 
-function ProductCart({ product, addToCartHandle }) {
+
+function ProductCart({ product, addToCartHandle, productIcons }) {
   const { name, description, price, period, tag, tagType, features } = product;
 
   const matchedIcon = productIcons.find((item) => item.name === name);

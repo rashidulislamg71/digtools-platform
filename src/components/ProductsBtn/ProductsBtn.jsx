@@ -11,7 +11,7 @@ function ProductsBtn({ active, setActive, cartItems }) {
         Products
       </button>
       <button onClick={() => setActive("cart")} className={`px-3 font-bold ${active === "cart" ? btnActiveStyles : btnCommonStyles}`}>
-        Cart {cartItems.length === 0 ? "" : `(${cartItems.length})`}
+        Cart ({cartItems.length})
       </button>
     </div>
   );

@@ -3,7 +3,7 @@
 import React from 'react'
 
 
-function Cart({ cart, productIcons, removeItemFormCart }) {
+function Cart({ cart, productIcons, removeItemFromCart }) {
     const matchedIcon = productIcons.find(
         (iconItem) => iconItem.name === cart.name
     );
@@ -26,7 +26,7 @@ function Cart({ cart, productIcons, removeItemFormCart }) {
                     </div>
                 </div>
                 <div>
-                    <button onClick={() => removeItemFormCart(cart)} className=" btn text-orange-500 cursor-pointer hover:text-orange-700">Remove</button>
+                    <button onClick={() => removeItemFromCart(cart)} className=" btn text-orange-500 cursor-pointer hover:text-orange-700">Remove</button>
                 </div>
 
             </div>

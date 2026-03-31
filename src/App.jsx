@@ -11,6 +11,20 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/HeroBanner/Banner.jsx";
 import Carts from "./components/Carts/Carts.jsx";
 
+import {
+  FaFileAlt,
+  FaChartLine,
+  FaCloud,
+  FaPaintBrush,
+  FaBullhorn,
+  FaGraduationCap,
+  FaCalendarAlt,
+  FaGlobe,
+  FaRobot
+} from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
+
+
 const productsData = async () => {
   try {
     const response = await fetch("/productsData.json");
@@ -38,18 +52,6 @@ const pricingData = async () => {
     return [];
   }
 };
-
-import {
-  FaFileAlt,
-  FaChartLine,
-  FaCloud,
-  FaPaintBrush,
-  FaBullhorn,
-  FaGraduationCap,
-  FaCalendarAlt,
-  FaGlobe,
-  FaRobot
-} from "react-icons/fa";
 
 const productIcons = [
   {
@@ -127,16 +129,18 @@ function App() {
     }
     const updatedCart = [...cartItems, item];
     setCartItems(updatedCart);
-
+    toast("Yes! Successfully Added To Cart!");
   };
 
-  const removeItemFormCart = (item) => {
+  const removeItemFromCart = (item) => {
     const updatedCart = cartItems.filter(cart => cart.id !== item.id);
     setCartItems(updatedCart);
+    toast("Oh No! Successfully Remove Item from Cart!");
   }
 
   const proceedToCheckout = () => {
     setCartItems([]);
+    toast("Oh No! Successfully Remove All Cart Item!");
   }
 
   return (
@@ -167,7 +171,7 @@ function App() {
             {active === "products" ? (
               <Products promiseProducts={promiseProducts} addToCartHandle={addToCartHandle} productIcons={productIcons} cartItems={cartItems} />
             ) : (
-              <Carts cartItems={cartItems} setCartItems={setCartItems} productIcons={productIcons} removeItemFormCart={removeItemFormCart} proceedToCheckout={proceedToCheckout} cartSum={cartSum} />
+              <Carts cartItems={cartItems} setCartItems={setCartItems} productIcons={productIcons} removeItemFromCart={removeItemFromCart} proceedToCheckout={proceedToCheckout} cartSum={cartSum} />
             )}
 
           </Suspense>
@@ -193,6 +197,8 @@ function App() {
       <footer>
         <Footer />
       </footer>
+
+      <ToastContainer />
     </>
   );
 }

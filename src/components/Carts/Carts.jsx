@@ -2,7 +2,7 @@ import React from 'react'
 import Cart from './Cart'
 import { FiShoppingCart } from 'react-icons/fi'
 
-function Carts({ cartItems, productIcons, removeItemFormCart, proceedToCheckout, cartSum }) {
+function Carts({ cartItems, productIcons, removeItemFromCart, proceedToCheckout, cartSum }) {
 
   return (
     <div className="w-full md:w-6xl rounded-xl bg-gray-100 p-5 md:p-10 mb-20 mt-10 ">
@@ -11,7 +11,7 @@ function Carts({ cartItems, productIcons, removeItemFormCart, proceedToCheckout,
           cartItems.length > 0 ?
             <>
               {cartItems.map((cart) => (
-                <Cart key={cart.id} cart={cart} productIcons={productIcons} removeItemFormCart={removeItemFormCart} proceedToCheckout={proceedToCheckout} />
+                <Cart key={cart.id} cart={cart} productIcons={productIcons} removeItemFromCart={removeItemFromCart} proceedToCheckout={proceedToCheckout} />
               ))}
               <div className="bg-green-50 p-5 rounded flex justify-between items-center w-full">
                 <p>Total</p>

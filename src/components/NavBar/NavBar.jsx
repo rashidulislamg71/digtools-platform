@@ -59,7 +59,7 @@ function NavBar({ cartItems }) {
         {/* Right side */}
         <div className="flex items-center gap-5">
           <div className="relative font-bold cursor-pointer">
-            <span className="absolute -top-3 left-3  bg-orange-500 px-1.5 text-[12px] rounded-full text-white">{cartItems.length === 0 ? "" : cartItems.length}</span>
+            <span className="absolute -top-3 left-3  bg-orange-500 px-1.5 text-[12px] rounded-full text-white">{cartItems.length}</span>
             <FiShoppingCart className="text-2xl hover:text-violet-600" />
           </div>
 

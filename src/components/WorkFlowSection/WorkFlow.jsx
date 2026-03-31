@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { FaCheckCircle } from 'react-icons/fa'
-import { FiBookmark } from 'react-icons/fi'
 
 function WorkFlow() {
     return (

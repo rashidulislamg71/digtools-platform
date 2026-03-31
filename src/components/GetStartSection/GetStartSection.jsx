@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillProduct } from "react-icons/ai";
 
-import { FaUserPlus, FaBoxOpen, FaRocket } from "react-icons/fa";
+import { FaUserPlus, FaRocket } from "react-icons/fa";
 
 const getStartData = [
   {

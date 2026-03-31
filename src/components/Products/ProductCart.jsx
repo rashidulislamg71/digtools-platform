@@ -9,11 +9,8 @@ import {
   FaGraduationCap,
   FaCalendarAlt,
   FaGlobe,
-  FaRobot,
-  FaFileArchive,
-  FaFileAudio,
+  FaRobot
 } from "react-icons/fa";
-import { FaFile } from "react-icons/fa6";
 
 const productIcons = [
   {

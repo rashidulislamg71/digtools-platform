@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../utils/Logo";
+import Logo from "../../utils/Logo.jsx";
 import { FiMenu, FiShoppingCart, FiX } from "react-icons/fi";
 import Button from "../../utils/Button";
 

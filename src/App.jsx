@@ -8,7 +8,7 @@ import GetStartSection from "./components/GetStartSection/GetStartSection";
 import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlowSection/WorkFlow";
 import Footer from "./components/Footer/Footer";
-import Banner from "./components/HeroBanner/Banner";
+import Banner from "./components/HeroBanner/Banner.jsx";
 
 const productsData = async () => {
   try {

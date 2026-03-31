@@ -1,8 +1,8 @@
 import React from "react";
-import LivePulse from "../../utils/LivePulse";
-import Button from "../../utils/Button";
-import playImg from "../../assets/play.png";
+import LivePulse from "../../utils/LivePulse.jsx";
+import Button from "../../utils/Button.jsx";
 import banner from "../../assets/banner.png";
+import { FaPlay } from "react-icons/fa";
 
 function Banner() {
   return (
@@ -24,8 +24,8 @@ function Banner() {
         </p>
         <div className="flex gap-4 items-center">
           <Button text={"Explore Products"} />
-          <button className="bg-linear-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text flex gap-1 items-center border border-violet-500 hover:border-fuchsia-600 cursor-pointer py-1 px-2 rounded-3xl">
-            <img src={playImg} alt="play" /> Watch Demo
+          <button className=" bg-linear-to-r from-violet-500 to-fuchsia-500 text-transparent bg-clip-text flex gap-1 items-center border border-violet-500 hover:border-fuchsia-600 cursor-pointer py-1 px-2 rounded-3xl">
+            <FaPlay className="text-violet-500 font-bold" /> Watch Demo
           </button>
         </div>
       </div>

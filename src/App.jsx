@@ -114,19 +114,26 @@ const promisePricing = pricingData();
 function App() {
   const [active, setActive] = useState('products');
   const [cartItems, setCartItems] = useState([]);
+  const [cartSum, setCartSum] = useState(0);
 
   const addToCartHandle = (item) => {
-    const data = [...cartItems, item];
-    setCartItems(data);
+    const updatedCart = [...cartItems, item];
+    setCartItems(updatedCart);
+
+    const totalPrice = updatedCart.reduce((sum, item) => sum + item.price, 0);
+    setCartSum(totalPrice);
   };
 
   const removeItemFormCart = (item) => {
-    const filterItem = cartItems.filter(cart => cart.id !== item.id);
-    setCartItems(filterItem);
+    const updatedCart = cartItems.filter(cart => cart.id !== item.id);
+    setCartItems(updatedCart);
+    const totalPrice = updatedCart.reduce((sum, i) => sum + i.price, 0);
+    setCartSum(totalPrice);
   }
 
   const proceedToCheckout = () => {
     setCartItems([]);
+    setCartSum(0);
   }
 
   return (
@@ -157,7 +164,7 @@ function App() {
             {active === "products" ? (
               <Products promiseProducts={promiseProducts} addToCartHandle={addToCartHandle} productIcons={productIcons} />
             ) : (
-              <Carts cartItems={cartItems} setCartItems={setCartItems} productIcons={productIcons} removeItemFormCart={removeItemFormCart} proceedToCheckout={proceedToCheckout} />
+              <Carts cartItems={cartItems} setCartItems={setCartItems} productIcons={productIcons} removeItemFormCart={removeItemFormCart} proceedToCheckout={proceedToCheckout} cartSum={cartSum} />
             )}
           </Suspense>
         </section>

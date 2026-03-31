@@ -26,10 +26,6 @@ const navLinks = (
 function NavBar({ cartItems }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const showCartComponent = () => {
-
-  }
-
   return (
     <div
       className="bg-gray-50 "

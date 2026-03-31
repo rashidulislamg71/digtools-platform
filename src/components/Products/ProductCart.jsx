@@ -1,16 +1,19 @@
 import React from "react";
+import { FiCheck } from "react-icons/fi";
 
 import { IoIosCheckmark } from "react-icons/io";
 
 
 
-function ProductCart({ product, addToCartHandle, productIcons }) {
+function ProductCart({ product, cartItems, addToCartHandle, productIcons }) {
   const { name, description, price, period, tag, tagType, features } = product;
 
   const matchedIcon = productIcons.find((item) => item.name === name);
 
   const Icon = matchedIcon?.icon;
   const iconColor = matchedIcon?.iconColor || "text-gray-500";
+
+  const isAdded = cartItems.some(data => data.id === product.id);
 
   return (
     <div className="bg-white rounded-2xl  p-6 flex flex-col justify-between  shadow-lg shadow-gray-300">
@@ -49,11 +52,19 @@ function ProductCart({ product, addToCartHandle, productIcons }) {
         ))}
       </ul>
 
-      <button onClick={() => addToCartHandle(product)}
-        className="mt-auto bg-linear-to-r from-violet-600 to-fuchsia-600 text-white py-2 rounded-lg cursor-pointer hover:to-violet-500
-       hover:text-black duration-100 transition"
+      <button onClick={() => addToCartHandle(product)} disabled={isAdded}
+        className={`mt-auto bg-linear-to-r  text-white py-2 rounded-lg cursor-pointer hover:to-violet-500
+       hover:text-black duration-100 transition ${isAdded ? "from-green-500 to-green-400" : "from-violet-600 to-fuchsia-600"}`}
       >
-        Buy Now
+
+        {isAdded ? (
+          <span className="flex justify-center items-center gap-1">
+            <FiCheck />
+            Added to cart
+          </span>
+        ) : (
+          "Buy Now"
+        )}
       </button>
     </div>
   );

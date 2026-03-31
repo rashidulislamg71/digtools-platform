@@ -7,10 +7,10 @@ function ProductsBtn({ active, setActive, cartItems }) {
 
   return (
     <div className="flex gap-2 border rounded-full border-violet-600  ">
-      <button onClick={() => setActive("products")} className={`px-3 ${active === "products" ? btnActiveStyles : btnCommonStyles}`}>
+      <button onClick={() => setActive("products")} className={`px-3 font-bold ${active === "products" ? btnActiveStyles : btnCommonStyles}`}>
         Products
       </button>
-      <button onClick={() => setActive("cart")} className={`px-3 ${active === "cart" ? btnActiveStyles : btnCommonStyles}`}>
+      <button onClick={() => setActive("cart")} className={`px-3 font-bold ${active === "cart" ? btnActiveStyles : btnCommonStyles}`}>
         Cart {cartItems.length === 0 ? "" : `(${cartItems.length})`}
       </button>
     </div>

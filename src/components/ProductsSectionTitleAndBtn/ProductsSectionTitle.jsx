@@ -1,7 +1,7 @@
 import React from "react";
 import ProductsBtn from "../ProductsBtn/ProductsBtn";
 
-function ProductsSectionTitle() {
+function ProductsSectionTitle( {active, setActive }) {
   return (
     <div>
       <div className="flex flex-col gap-4 md:gap-5 items-center justify-center py-5 px-5 text-center">
@@ -12,7 +12,7 @@ function ProductsSectionTitle() {
           Choose from our curated collection of premium digital products
           designed to boost your productivity and creativity.
         </p>
-        <ProductsBtn />
+        <ProductsBtn active ={active} setActive = {setActive} />
       </div>
     </div>
   );

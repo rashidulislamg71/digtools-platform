@@ -4,7 +4,7 @@ import React from 'react'
 import Logo from '../../utils/Logo.jsx'
 import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa'
 
-const footerLinkTitleStyle = "text-lg font-semibold mb-4 text-white border-b-2 border-violet-500 w-fit"
+const footerLinkTitleStyle = "text-lg font-semibold mb-4 text-white"
 
 const footerLinkStyle = "text-gray-400 hover:text-white transition-colors duration-300 text-sm block"
 

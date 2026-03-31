@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Stats from "./components/status/Stats";
@@ -9,6 +9,7 @@ import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlowSection/WorkFlow";
 import Footer from "./components/Footer/Footer";
 import Banner from "./components/HeroBanner/Banner.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 
 const productsData = async () => {
   try {
@@ -39,6 +40,8 @@ const pricingData = async () => {
 };
 
 function App() {
+const [active, setActive] = useState('products');
+
   const promiseProducts = productsData();
   const promisePricing = pricingData();
   return (
@@ -55,7 +58,7 @@ function App() {
         </section>
 
         <section>
-          <ProductsSectionTitle />
+          <ProductsSectionTitle active ={active} setActive ={setActive} />
         </section>
         <section>
           <Suspense

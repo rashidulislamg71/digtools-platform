@@ -10,8 +10,8 @@ function WorkFlow() {
                 <p className='text-sm max-w-140 m-auto'>Join thousands of professionals who are already using DigiTools to work smarter.Start your free trial today.</p>
                 {/* buttons  */}
                 <div className='flex justify-center items-center gap-3 mt-8'>
-                    <button className='py-1 px-3 bg-white text-violet-500 font-semibold rounded-full cursor-pointer shadow-2xl hover:bg-violet-100'>Explore Products</button>
-                    <button className='py-1 px-3 border text-white font-semibold rounded-full cursor-pointer  hover:text-fuchsia-800 hover:border-white shadow-2xl '>View Pricing</button>
+                    <button className='py-1 px-3 bg-white text-violet-500 font-semibold rounded-full cursor-pointer shadow-2xl hover:-translate-y-1 duration-300 transition-all'>Explore Products</button>
+                    <button className='py-1 px-3 border text-white font-semibold rounded-full cursor-pointer hover:-translate-y-1 duration-300 transition-all shadow-2xl '>View Pricing</button>
                 </div>
                 {/* Features List */}
                 <ul className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 text-sm text-white/90">

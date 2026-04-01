@@ -54,7 +54,7 @@ function ProductCart({ product, cartItems, addToCartHandle, productIcons }) {
 
       <button onClick={() => addToCartHandle(product)} disabled={isAdded}
         className={`mt-auto bg-linear-to-r  text-white py-2 rounded-lg cursor-pointer hover:to-violet-500
-       hover:text-black duration-100 transition ${isAdded ? "from-green-500 to-green-400" : "from-violet-600 to-fuchsia-600"}`}
+        duration-100 transition ${isAdded ? "from-green-500 to-violet-500  " : "from-violet-600 to-fuchsia-600"}`}
       >
 
         {isAdded ? (

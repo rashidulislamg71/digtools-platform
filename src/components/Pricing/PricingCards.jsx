@@ -7,7 +7,7 @@ function PricingCards({ pricingItem }) {
   return (
     <div
       className={`relative rounded-2xl p-6 shadow-lg flex flex-col justify-between transition
-      ${tagType === "popular" ? "bg-violet-500 text-white" : "bg-gray-100"}`}
+      ${tagType === "popular" ? "bg-linear-to-t from-violet-500 to-fuchsia-500 text-white" : "bg-gray-100"}`}
     >
       {/* Tag (Top Badge) */}
       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
